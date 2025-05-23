@@ -3,25 +3,81 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Calendar } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="py-20 px-4 max-w-6xl mx-auto" id="contact">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-          Let's Work Together
+    <section className="py-20 px-4 max-w-6xl mx-auto relative" id="contact">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-10 w-48 h-48 bg-yellow-400/5 rounded-2xl rotate-12"></div>
+        <div className="absolute bottom-1/4 right-10 w-64 h-64 border border-yellow-400/10 rounded-full"></div>
+      </div>
+
+      <div className="text-center mb-16 relative z-10">
+        <div className="inline-block mb-4">
+          <span className="text-sm uppercase tracking-wider text-yellow-400 font-medium">Get In Touch</span>
+        </div>
+        <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+          <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            Let's Work
+          </span>
+          <br />
+          <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent font-bold">
+            Together
+          </span>
         </h2>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-          Ready to bring your ideas to life? Get in touch and let's discuss your next project.
+          Ready to bring your ideas to life? Let's discuss your next project and create something amazing.
         </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        {/* Email Module */}
+        <Card className="bg-black/40 border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm group hover:shadow-xl hover:shadow-yellow-500/10">
+          <CardContent className="p-6 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full text-black mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Mail className="w-8 h-8" />
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Email</h3>
+            <p className="text-yellow-300 font-medium">dinesh.kumar@email.com</p>
+            <p className="text-gray-400 text-sm mt-1">Available 24/7</p>
+          </CardContent>
+        </Card>
+
+        {/* Phone Module */}
+        <Card className="bg-black/40 border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm group hover:shadow-xl hover:shadow-yellow-500/10">
+          <CardContent className="p-6 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full text-black mb-4 group-hover:scale-110 transition-transform duration-300">
+              <Phone className="w-8 h-8" />
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Phone</h3>
+            <p className="text-yellow-300 font-medium">+1 (555) 123-4567</p>
+            <p className="text-gray-400 text-sm mt-1">Mon - Fri, 9AM - 6PM</p>
+          </CardContent>
+        </Card>
+
+        {/* Location Module */}
+        <Card className="bg-black/40 border-yellow-500/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-sm group hover:shadow-xl hover:shadow-yellow-500/10">
+          <CardContent className="p-6 text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full text-black mb-4 group-hover:scale-110 transition-transform duration-300">
+              <MapPin className="w-8 h-8" />
+            </div>
+            <h3 className="text-white font-semibold text-lg mb-2">Location</h3>
+            <p className="text-yellow-300 font-medium">San Francisco, CA</p>
+            <p className="text-gray-400 text-sm mt-1">Open to remote work</p>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <Card className="bg-slate-800/50 border-slate-700">
+        <Card className="bg-black/40 border-yellow-500/20 backdrop-blur-sm">
           <CardHeader>
-            <CardTitle className="text-white text-2xl">Send Message</CardTitle>
+            <CardTitle className="text-white text-2xl flex items-center">
+              <MessageCircle className="w-6 h-6 text-yellow-400 mr-2" />
+              Send Message
+            </CardTitle>
             <CardDescription className="text-gray-300">
               Fill out the form below and I'll get back to you within 24 hours.
             </CardDescription>
@@ -33,7 +89,7 @@ const Contact = () => {
                   <label className="text-white text-sm font-medium mb-2 block">Name</label>
                   <Input 
                     placeholder="Your name" 
-                    className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
+                    className="bg-gray-900/50 border-yellow-500/30 text-white placeholder-gray-400 focus:border-yellow-400"
                   />
                 </div>
                 <div>
@@ -41,7 +97,7 @@ const Contact = () => {
                   <Input 
                     type="email" 
                     placeholder="your.email@example.com" 
-                    className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
+                    className="bg-gray-900/50 border-yellow-500/30 text-white placeholder-gray-400 focus:border-yellow-400"
                   />
                 </div>
               </div>
@@ -50,7 +106,7 @@ const Contact = () => {
                 <label className="text-white text-sm font-medium mb-2 block">Subject</label>
                 <Input 
                   placeholder="Project inquiry" 
-                  className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
+                  className="bg-gray-900/50 border-yellow-500/30 text-white placeholder-gray-400 focus:border-yellow-400"
                 />
               </div>
               
@@ -59,11 +115,11 @@ const Contact = () => {
                 <Textarea 
                   placeholder="Tell me about your project..." 
                   rows={5}
-                  className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
+                  className="bg-gray-900/50 border-yellow-500/30 text-white placeholder-gray-400 focus:border-yellow-400"
                 />
               </div>
               
-              <Button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white">
+              <Button className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-semibold">
                 <Send className="w-4 h-4 mr-2" />
                 Send Message
               </Button>
@@ -71,68 +127,51 @@ const Contact = () => {
           </CardContent>
         </Card>
 
-        {/* Contact Information */}
-        <div className="space-y-8">
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white mr-4">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Email</h3>
-                  <p className="text-gray-300">john.developer@email.com</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white mr-4">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Phone</h3>
-                  <p className="text-gray-300">+1 (555) 123-4567</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-slate-800/50 border-slate-700">
-            <CardContent className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white mr-4">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold">Location</h3>
-                  <p className="text-gray-300">San Francisco, CA</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-r from-purple-500 to-blue-500 border-0">
+        {/* Quick Actions */}
+        <div className="space-y-6">
+          <Card className="bg-gradient-to-r from-yellow-400 to-yellow-500 border-0">
             <CardContent className="p-6 text-center">
-              <h3 className="text-white font-bold text-xl mb-2">Ready to Start?</h3>
-              <p className="text-white/90 mb-4">
+              <h3 className="text-black font-bold text-xl mb-2">Ready to Start?</h3>
+              <p className="text-black/80 mb-4">
                 Let's discuss your project and create something amazing together.
               </p>
-              <Button variant="secondary" className="bg-white text-purple-600 hover:bg-gray-100">
+              <Button variant="secondary" className="bg-black text-yellow-400 hover:bg-gray-900 font-semibold">
+                <Calendar className="w-4 h-4 mr-2" />
                 Schedule a Call
               </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-black/40 border-yellow-500/20 backdrop-blur-sm">
+            <CardContent className="p-6">
+              <h3 className="text-white font-semibold text-lg mb-4">Why Choose Me?</h3>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                  <span className="text-gray-300 text-sm">5+ years of experience</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                  <span className="text-gray-300 text-sm">50+ successful projects</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                  <span className="text-gray-300 text-sm">100% client satisfaction</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                  <span className="text-gray-300 text-sm">24/7 support available</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="mt-20 pt-8 border-t border-slate-700 text-center">
+      <div className="mt-20 pt-8 border-t border-yellow-500/20 text-center">
         <p className="text-gray-400">
-          © 2024 John Developer. All rights reserved. Built with ❤️ using React & Tailwind CSS
+          © 2024 Dinesh Kumar. All rights reserved. Built with ❤️ using React & Tailwind CSS
         </p>
       </div>
     </section>

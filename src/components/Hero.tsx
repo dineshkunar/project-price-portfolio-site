@@ -1,5 +1,5 @@
 
-import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -7,31 +7,42 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Professional Photo - Top Right */}
+      <div className="absolute top-8 right-8 z-20">
+        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-yellow-400 shadow-2xl hover:scale-105 transition-transform duration-300">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+            alt="Dinesh Kumar"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
       
       <div className="text-center max-w-5xl mx-auto relative z-10">
         {/* Profile Image */}
         <div className="w-40 h-40 mx-auto mb-12 relative group">
-          <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500 p-1 animate-pulse">
-            <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-slate-800 transition-all duration-300">
-              <span className="text-5xl font-bold text-white">JD</span>
+          <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 p-1 animate-pulse">
+            <div className="w-full h-full rounded-full bg-black flex items-center justify-center group-hover:bg-gray-900 transition-all duration-300">
+              <span className="text-5xl font-bold text-yellow-400">DK</span>
             </div>
           </div>
-          <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full opacity-20 blur-xl animate-pulse"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full opacity-20 blur-xl animate-pulse"></div>
         </div>
 
         {/* Main Content */}
         <div className="space-y-8">
           <div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 tracking-tight">
-              <span className="bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                John
+              <span className="bg-gradient-to-r from-white via-yellow-200 to-yellow-100 bg-clip-text text-transparent">
+                Dinesh
               </span>
               <br />
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-teal-400 bg-clip-text text-transparent font-bold">
-                Developer
+              <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-bold">
+                Kumar
               </span>
             </h1>
             
@@ -50,17 +61,17 @@ const Hero = () => {
           {/* Stats */}
           <div className="flex justify-center items-center space-x-12 py-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">50+</div>
+              <div className="text-3xl font-bold text-yellow-400">50+</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Projects</div>
             </div>
             <div className="w-px h-12 bg-gray-600"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">5+</div>
+              <div className="text-3xl font-bold text-yellow-500">5+</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Years</div>
             </div>
             <div className="w-px h-12 bg-gray-600"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-teal-400">100%</div>
+              <div className="text-3xl font-bold text-yellow-400">100%</div>
               <div className="text-gray-400 text-sm uppercase tracking-wider">Satisfaction</div>
             </div>
           </div>
@@ -69,16 +80,16 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black px-8 py-4 text-lg font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
             >
+              <Eye className="w-5 h-5 mr-2" />
               View My Work
-              <ArrowDown className="w-5 h-5 ml-2" />
             </Button>
             
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-2 border-gray-600 text-gray-300 hover:bg-gray-800 hover:border-gray-500 px-8 py-4 text-lg font-medium rounded-full transition-all duration-300"
+              className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 px-8 py-4 text-lg font-medium rounded-full transition-all duration-300"
             >
               <Download className="w-5 h-5 mr-2" />
               Download CV
@@ -90,21 +101,21 @@ const Hero = () => {
             <Button 
               variant="ghost" 
               size="lg" 
-              className="text-gray-400 hover:text-purple-400 hover:bg-purple-500/10 rounded-full transition-all duration-300"
+              className="text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10 rounded-full transition-all duration-300"
             >
               <Github className="w-6 h-6" />
             </Button>
             <Button 
               variant="ghost" 
               size="lg" 
-              className="text-gray-400 hover:text-blue-400 hover:bg-blue-500/10 rounded-full transition-all duration-300"
+              className="text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10 rounded-full transition-all duration-300"
             >
               <Linkedin className="w-6 h-6" />
             </Button>
             <Button 
               variant="ghost" 
               size="lg" 
-              className="text-gray-400 hover:text-teal-400 hover:bg-teal-500/10 rounded-full transition-all duration-300"
+              className="text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10 rounded-full transition-all duration-300"
             >
               <Mail className="w-6 h-6" />
             </Button>
@@ -115,8 +126,8 @@ const Hero = () => {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="flex flex-col items-center space-y-2">
-          <div className="w-px h-16 bg-gradient-to-b from-transparent to-gray-400"></div>
-          <ArrowDown className="w-5 h-5 text-gray-400" />
+          <div className="w-px h-16 bg-gradient-to-b from-transparent to-yellow-400"></div>
+          <ArrowDown className="w-5 h-5 text-yellow-400" />
         </div>
       </div>
     </section>
